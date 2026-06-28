@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flipkart Review Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="true">
+      Dark website
+    </button>
+    <main class="app-shell">
+      <section class="tool-panel" aria-labelledby="page-title">
+        <div class="brand-row">
+          <div class="brand-mark">F</div>
+          <div>
+            <h1 id="page-title">Flipkart Review Finder</h1>
+            <p>Find the newest matching review, confirm it, then reveal its IDs.</p>
+          </div>
+        </div>
+
+        <form id="review-form" class="search-form">
+          <label>
+            <span>Flipkart product link</span>
+            <input
+              id="product-url"
+              name="productUrl"
+              type="url"
+              placeholder="https://www.flipkart.com/..."
+              autocomplete="url"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Reviewer name</span>
+            <input
+              id="reviewer-name"
+              name="reviewerName"
+              type="text"
+              placeholder="Name shown on review"
+              autocomplete="name"
+              required
+            />
+          </label>
+
+          <button id="find-button" type="submit">
+            <span class="button-icon">⌕</span>
+            Find Review
+          </button>
+        </form>
+      </section>
+
+      <section class="result-panel" aria-live="polite">
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon">★</div>
+          <h2>Latest review will appear here</h2>
+          <p>Enter the product link and reviewer name to start.</p>
+        </div>
+
+        <div id="review-state" class="review-state hidden">
+          <div class="result-header">
+            <div>
+              <p id="match-label" class="eyebrow"></p>
+              <h2 id="review-title"></h2>
+            </div>
+            <span id="review-rating" class="rating"></span>
+          </div>
+
+          <p id="review-text" class="review-text"></p>
+
+          <dl class="review-meta">
+            <div>
+              <dt>Name</dt>
+              <dd id="review-name"></dd>
+            </div>
+            <div>
+              <dt>Date</dt>
+              <dd id="review-date"></dd>
+            </div>
+          </dl>
+
+          <div id="confirm-box" class="confirm-box">
+            <h3>Is this your review?</h3>
+            <div class="actions">
+              <button id="yes-button" type="button" class="primary">Yes</button>
+              <button id="no-button" type="button" class="secondary">No, find next</button>
+            </div>
+          </div>
+
+          <div id="id-box" class="id-box hidden">
+            <h3>Review Link</h3>
+            <div class="link-row">
+              <input id="review-link" type="text" readonly />
+              <button id="copy-button" type="button" class="secondary copy-button">Copy</button>
+            </div>
+            <p id="copy-status" class="copy-status"></p>
+          </div>
+        </div>
+
+        <div id="message" class="message hidden"></div>
+
+        <footer class="footer">
+          <p>made by vishal soni</p>
+          <a
+            href="https://vishalsoniindia.github.io/redirect-links/instagram-link.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram
+          </a>
+          <p class="footer-note">
+            if link not work contect vishal soni on instagram
+            <a
+              href="https://vishalsoniindia.github.io/redirect-links/instagram-link.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram link
+            </a>
+          </p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
